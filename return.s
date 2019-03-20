@@ -15,22 +15,22 @@
 
     .section    .data
 data_items:
-    .long       3,67,34,23,22,45,75,54,34,44,33,22,11,66,0
+    .long       3,67,34,23,22,45,75,54,34,44,33,22,11,66,233
 data_items_len:
-    .long       12
+    .long       15
 
     .section    .text
     
     .globl      _start
 _start:
     movl        $0, %ebx
+    movl        $0, %edi
     movl        data_items_len(,%edi,4), %ecx # load array length
     
 # this is the equivalent of a for-loop with conditions
 # for(int i = 0; i < array_length; i++)
 # or in this case:
 # for(%edi = 0; %edi < %ecx; %edi++)
-    movl        $0, %edi
 start_loop:
 # loop content
 # {
