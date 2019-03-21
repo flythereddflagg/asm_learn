@@ -1,9 +1,9 @@
 CC = as
 LINKER = ld
 
-CFLAGS = -Wall -g
+CFLAGS = -Wall -g -m32
 
-SRC = return
+SRC = run_func
 EXT = .s
 
 all: $(SRC)
